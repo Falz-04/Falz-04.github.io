@@ -1,13 +1,687 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <title>My Portfolio</title>
-        <style>
-            body { margin: 0; overflow: hidden; }
-            iframe { width: 100vw; height: 100vh; border: none; }
-        </style>
-    </head>
-    <body>
-        <iframe src="Portfolio.pdf"></iframe>
-    </body>
-    </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="description" content="Falgun Batavia — Electronics & Hardware Engineering Portfolio" />
+  <title>Falgun Batavia | Electronics Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Decorative background canvas -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="brand__logo" aria-hidden="true"></span>
+      <span class="brand__text">falz<span class="muted">.io</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a class="pill" href="#contact">Contact</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="mobileMenu" id="mobileMenu" aria-hidden="true">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <main id="home" class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__left">
+        <div class="tagRow">
+          <span class="chip"><span class="dot"></span> Electronics • Embedded • FPGA • RF</span>
+          <span class="chip chip--alt">Power Systems • Space • EV</span>
+        </div>
+
+        <h1>
+          Falgun Batavia
+          <span class="headlineGlow">Electronics & Hardware Engineer</span>
+        </h1>
+
+        <p class="lead">
+          Penultimate Mechatronics & Computer Science student (USYD) with hands-on 
+          experience designing electrical architectures, PCBs, high-voltage subsystems,
+           and real-time embedded/FPGA hardware, from a 470V Formula Student electric 
+           vehicle to space-grade perovskite solar arrays.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn--primary" href="#projects">
+            <span aria-hidden="true">⚡</span> View projects
+          </a>
+          <a class="btn btn--ghost" href="Falgun Batavia Resume.pdf" target="_blank" rel="noopener">
+            Download resume
+          </a>
+        </div>
+
+        <div class="quickStats">
+          <div class="stat">
+            <div class="stat__num">Electrical</div>
+            <div class="stat__label">Power, sensing, control</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Measured</div>
+            <div class="stat__label">Bench-validated hardware</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Deterministic</div>
+            <div class="stat__label">Embedded & FPGA systems</div>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section__head">
+        <h2>Featured builds</h2>
+        <p>Real hardware, measurable results, clean engineering notes.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card project" data-tilt>
+          <div class="card__fx"></div>
+          <div class="card__head">
+            <div class="card__title">470V Formula Student EV - HV System</div>
+            <div class="card__meta">
+              <span class="pillTag">Leadership</span>
+              <span class="pillTag pillTag--alt">Student Engineering</span>
+            </div>
+          </div>
+          <p class="card__body">
+            Led end‑to‑end electrical design & integration for the team’s first functional EV.
+            Accumulator + isolation + precharge/discharge + compliance under tight deadlines.
+          </p>
+          <ul class="bullets">
+            <li>Designed & validated 470.4V, 6kWh accumulator architecture</li>
+            <li>Integrated Motors and Motor Controllers and Control Systems</li>
+            <li>Delivered precharge + discharge circuits meeting timing requirements</li>
+            <li>Managed system‑level design reviews for a 15‑member electrical team</li>
+          </ul>
+          <div class="card__foot">
+            <span class="monoSmall">Tools: Altium • LTspice • CAN • STM32</span>
+            <a class="link" href="#p-hv">Read more →</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tilt>
+          <div class="card__fx"></div>
+          <div class="card__head">
+            <div class="card__title">Multi‑Junction Solar Cells - Optical TMM</div>
+            <div class="card__meta">
+              <span class="pillTag">Internship</span>
+              <span class="pillTag pillTag--alt"></span>
+            </div>
+          </div>
+          <p class="card__body">
+            Built Python Transfer Matrix Method (TMM) simulation models for multilayer solar cell stacks (300–1200nm) to
+            quantify parasitic loss, absorption and reflection, guiding design improvements.
+          </p>
+          <ul class="bullets">
+            <li>Layer‑resolved absorptance + parasitic optical loss analysis</li>
+            <li>Correlated simulation outputs with lab measurements</li>
+            <li>Designed PCB architectures for space‑grade arrays</li>
+          </ul>
+          <div class="card__foot">
+            <span class="monoSmall">Tools: Python • Fusion360</span>
+            <a class="link" href="#p-tmm">Read more →</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tilt>
+          <div class="card__fx"></div>
+          <div class="card__head">
+            <div class="card__title">Beat‑Sync VFX - Real Time FPGA DSP</div>
+            <div class="card__meta">
+              <span class="pillTag">FPGA</span>
+              <span class="pillTag pillTag--alt">Real‑time</span>
+            </div>
+          </div>
+          <p class="card__body">
+            Implemented VGA controller + 5×5 convolution MAC array to drive audio‑reactive
+            video effects with deterministic throughput.
+          </p>
+          <ul class="bullets">
+            <li>1 pixel/clock throughput via pipelining + BRAM buffers</li>
+            <li>Parameterized convolution + pixelwise filters (intensity/hue)</li>
+            <li>Testbenches + timing‑aware hardware design</li>
+          </ul>
+          <div class="card__foot">
+            <span class="monoSmall">Tools: Verilog • SystemVerilog • Quartus • ModelSim • Logic Analyser</span>
+            <a class="link" href="#p-fpga">Read more →</a>
+          </div>
+        </article>
+      </div>
+      <div class="section__head" style="margin-top:22px;">
+  <h2>Hardware & electronics</h2>
+  <p>PCBs, analog front-ends, power/safety boards, and embedded bring-up.</p>
+</div>
+
+<div class="grid grid--3">
+  <article class="card project" data-tilt>
+    <div class="card__fx"></div>
+    <div class="card__head">
+      <div class="card__title">TSAL + Discharge Board</div>
+      <div class="card__meta">
+        <span class="pillTag">PCB</span>
+        <span class="pillTag pillTag--alt">Power / Safety</span>
+      </div>
+    </div>
+    <p class="card__body">
+      Combined tractive system active light indication with a controlled discharge path
+      to simplify wiring and improve serviceability.
+    </p>
+    <ul class="bullets">
+      <li>Designed schematic + PCB, validated behaviour in-system</li>
+      <li>Reduced harness complexity by consolidating functions</li>
+      <li>Bench tested + verified integration on vehicle</li>
+    </ul>
+    <div class="card__foot">
+      <span class="monoSmall">Tools: Altium / KiCad • LTspice • Bench testing</span>
+      <a class="link" href="#p-tsal">Read more →</a>
+    </div>
+  </article>
+
+  <article class="card project" data-tilt>
+    <div class="card__fx"></div>
+    <div class="card__head">
+      <div class="card__title">Precharge Control Board</div>
+      <div class="card__meta">
+        <span class="pillTag">Power</span>
+        <span class="pillTag pillTag--alt">Controls</span>
+      </div>
+    </div>
+    <p class="card__body">
+      Power-up control circuitry to manage inrush current and bring the traction system
+      online in a controlled, repeatable way.
+    </p>
+    <ul class="bullets">
+      <li>Voltage sensing + sequencing logic for reliable energisation</li>
+      <li>Designed + simulated, then validated with real hardware</li>
+      <li>Integrated into the broader HV + LV control system</li>
+    </ul>
+    <div class="card__foot">
+      <span class="monoSmall">Tools: LTspice • PCB CAD • Oscilloscope</span>
+      <a class="link" href="#p-precharge">Read more →</a>
+    </div>
+  </article>
+
+  <article class="card project" data-tilt>
+    <div class="card__fx"></div>
+    <div class="card__head">
+      <div class="card__title">Battery Thermistor Acquisition Node</div>
+      <div class="card__meta">
+        <span class="pillTag">Embedded</span>
+        <span class="pillTag pillTag--alt">CAN</span>
+      </div>
+    </div>
+    <p class="card__body">
+      STM32-based CAN node for temperature monitoring with robust sampling,
+      fault handling, and telemetry.
+    </p>
+    <ul class="bullets">
+      <li>ADC sampling + filtering + thresholds for safety monitoring</li>
+      <li>CAN messaging + integration into system telemetry</li>
+      <li>Designed for bring-up and debugging in real environments</li>
+    </ul>
+    <div class="card__foot">
+      <span class="monoSmall">Tools: STM32 • C • CAN • Logic analyser</span>
+      <a class="link" href="#p-tem">Read more →</a>
+    </div>
+  </article>
+
+  <article class="card project" data-tilt>
+    <div class="card__fx"></div>
+    <div class="card__head">
+      <div class="card__title">Pulse Oximeter Analog Front-End</div>
+      <div class="card__meta">
+        <span class="pillTag">Analog</span>
+        <span class="pillTag pillTag--alt">Sensing</span>
+      </div>
+    </div>
+    <p class="card__body">
+      Two-layer analog PCB for optical pulse sensing using IR/red LEDs and
+      amplification + filtering to extract clean waveforms.
+    </p>
+    <ul class="bullets">
+      <li>Analog signal chain design + validation on oscilloscope</li>
+      <li>Filtering for heart-rate band isolation and noise reduction</li>
+      <li>LTspice-informed design decisions</li>
+    </ul>
+    <div class="card__foot">
+      <span class="monoSmall">Tools: LTspice • PCB CAD • Oscilloscope</span>
+      <a class="link" href="#p-pulseox">Read more →</a>
+    </div>
+  </article>
+
+  <article class="card project" data-tilt>
+    <div class="card__fx"></div>
+    <div class="card__head">
+      <div class="card__title">Flexible Solar Array PCB Work</div>
+      <div class="card__meta">
+        <span class="pillTag">Internship</span>
+        <span class="pillTag pillTag--alt">Hardware</span>
+      </div>
+    </div>
+    <p class="card__body">
+      PCB architecture and validation work supporting flexible perovskite solar array development
+      in a research-led engineering environment.
+    </p>
+    <ul class="bullets">
+      <li>Designed and tested PCB architectures for array integration</li>
+      <li>Supported design reviews and documentation (PDR/CDR)</li>
+      <li>Bench validation and iteration with stakeholders</li>
+    </ul>
+    <div class="card__foot">
+      <span class="monoSmall">Tools: PCB CAD • Lab testing • Documentation</span>
+      <a class="link" href="#p-solarpcb">Read more →</a>
+    </div>
+  </article>
+</div>
+
+      <!-- Deep-dive anchors -->
+      <div class="deepDive" id="p-hv">
+        <div class="deepDive__head">
+          <h3>High-Voltage System - Technical Overview</h3>
+          <p>
+            Energy storage, power conversion, motor drive, and control integration
+            across the tractive system.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>System Architecture</h4>
+            <ul class="bullets">
+              <li>High-voltage energy storage and distribution architecture</li>
+              <li>Isolation, precharge, and discharge circuitry for controlled energisation</li>
+              <li>Integration of inverters and electric motors for traction drive</li>
+              <li>Low-voltage control, sensing, and CAN-based communication</li>
+            </ul>
+          </div>
+
+          <div class="card note">
+            <h4>Engineering Outcomes</h4>
+            <ul class="bullets">
+              <li>Delivered a complete, operational high-voltage tractive system</li>
+              <li>Achieved reliable power-up, shutdown, and fault-handling behaviour</li>
+              <li>Enabled stable motor operation on track</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="deepDive" id="p-tmm">
+        <div class="deepDive__head">
+          <h3>Optical TMM - What it measures</h3>
+          <p>Reflection, transmission, absorption and parasitic losses per layer of a solar cell across a spectrum.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Model outputs</h4>
+            <ul class="bullets">
+              <li>Spectral Reflection / Absorption / Transmittance and (layer‑resolved) absorpance</li>
+              <li>External Quantum Effiiency (EQE) style photocurrent estimation via integration</li>
+              <li>Identify limiting layers + loss channels</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Use in design</h4>
+            <ul class="bullets">
+              <li>Compare to measured devices to validate stack assumptions</li>
+              <li>Guide thickness/material changes with quantified impact</li>
+              <li>Accelerate iteration by narrowing lab experiments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="deepDive" id="p-fpga">
+        <div class="deepDive__head">
+          <h3>FPGA VFX - Architecture</h3>
+          <p>Deterministic video pipeline with audio‑driven parameterization.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Modules</h4>
+            <ul class="bullets">
+              <li>VGA timing generator + pixel synchronization</li>
+              <li>Line buffers in BRAM for convolution windowing</li>
+              <li>5×5 separable kernel implementation</li>
+              <li>Audio features mapped to kernel scaling + filters</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Performance</h4>
+            <ul class="bullets">
+              <li>1 pixel/clock pipeline throughput</li>
+              <li>Custom testbenches for verification</li>
+              <li>Real‑time effects on VGA monitor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="deepDive" id="p-tsal">
+        <div class="deepDive__head">
+          <h3>TSAL + Discharge Board - Overview</h3>
+          <p>Consolidated safety indication and controlled discharge to safely shutdown the vehicle.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>What it does</h4>
+            <ul class="bullets">
+              <li>Indicates tractive system state via a dedicated output</li>
+              <li>Provides a controlled discharge path during shutdown</li>
+              <li>Reduces wiring complexity by combining functions</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>How it was validated</h4>
+            <ul class="bullets">
+              <li>Simulation + bench testing (scope measurements)</li>
+              <li>Integration testing within the electrical system</li>
+              <li>Debugged for reliability and serviceability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="deepDive" id="p-precharge">
+        <div class="deepDive__head">
+          <h3>Precharge Board - Overview</h3>
+          <p>Controlled energisation to avoid inrush and enable repeatable power-up behaviour.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Design focus</h4>
+            <ul class="bullets">
+              <li>Sequencing logic and sensing for stable initial power delivery</li>
+              <li>Designed for integration with LV control and HV hardware</li>
+              <li>Built for debugging and maintainable wiring</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Outcome</h4>
+            <ul class="bullets">
+              <li>Reliable startup behaviour demonstrated on hardware</li>
+              <li>Integrated into full tractive system</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="deepDive" id="p-pulseox">
+        <div class="deepDive__head">
+          <h3>Pulse Oximeter AFE - Overview</h3>
+          <p>Analog optical sensing front-end with amplification and filtering.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Signal chain</h4>
+            <ul class="bullets">
+              <li>LED illumination + phototransistor sensing</li>
+              <li>Amplification and filtering for clean pulse waveform</li>
+              <li>Noise reduction and band isolation</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Validation</h4>
+            <ul class="bullets">
+              <li>Scope measurements demonstrating stable pulse waveforms</li>
+              <li>Iterated component values based on measured behaviour</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="deepDive" id="p-solarpcb">
+        <div class="deepDive__head">
+          <h3>Solar Array PCB Work - Overview</h3>
+          <p>Hardware design and validation supporting flexible solar array integration.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Work performed</h4>
+            <ul class="bullets">
+              <li>PCB architecture design for integration constraints</li>
+              <li>Testing and iteration in a research-led team</li>
+              <li>Documentation for engineering reviews</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Why it matters</h4>
+            <ul class="bullets">
+              <li>Shows practical PCB design + validation workflow</li>
+              <li>Demonstrates engineering maturity in review-driven environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section__head">
+        <h2>Experience</h2>
+        <p>Leadership + research-led hardware development.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard card">
+            <div class="tTop">
+              <h3>Engineering Intern @ EurokaPower</h3>
+              <span class="monoSmall">Jan 2026 → Present</span>
+            </div>
+            <ul class="bullets">
+              <li>Designed and tested PCB architectures for flexible space‑grade perovskite solar arrays</li>
+              <li>Developed Python optical TMM models for multilayer/multi‑junction structures (300–1200nm)</li>
+              <li>Contributed to PDR/CDR for 2027 space solar array launch</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard card">
+            <div class="tTop">
+              <h3>Electrical Department Head @ Sydney Motorsport (FSAE)</h3>
+              <span class="monoSmall">Jan 2025 → Dec 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Led end‑to‑end electrical design & integration enabling first fully functional EV</li>
+              <li>Managed 15‑member team across high and low voltage subsections</li>
+              <li>Ran system‑wide design reviews; ensured compliance with FSAE standards</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard card">
+            <div class="tTop">
+              <h3>High Voltage Lead Engineer @ Sydney Motorsport (FSAE)</h3>
+              <span class="monoSmall">Aug 2024 → Jan 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Designed & validated 470V, 6kWh accumulator + functional safety systems</li>
+              <li>Led a 6‑person HV team; integrated motors/inverters and control circuits</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="tItem">
+          <div class="tDot"></div>
+          <div class="tCard card">
+            <div class="tTop">
+              <h3>Low Voltage Engineer @ Sydney Motorsport (FSAE)</h3>
+              <span class="monoSmall">Mar 2023 → Aug 2024</span>
+            </div>
+            <ul class="bullets">
+              <li>Contributed to wiring harness design and manufacture for an internal combustion vehicle</li>
+              <li>Upskilled in Circuit and PCB design</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section__head">
+        <h2>Skills & tools</h2>
+        <p>Electronics-first toolkit. Broad, but not shallow.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card skill">
+          <h3>Hardware & Systems</h3>
+          <div class="pillWrap">
+            <span class="pillTag">PCB Design</span>
+            <span class="pillTag">Analog & Digital Circuit Design</span>
+            <span class="pillTag">Electrical Architecture</span>
+            <span class="pillTag">Harness Design</span>
+            <span class="pillTag">DFM</span>
+          </div>
+          <p class="small muted">Altium, KiCad, schematic capture, integration & validation.</p>
+        </div>
+
+        <div class="card skill">
+          <h3>Embedded & FPGA</h3>
+          <div class="pillWrap">
+            <span class="pillTag">STM32 / ESP32, Raspberry PI / Arduino</span>
+            <span class="pillTag">Altera FPGA </span>
+            <span class="pillTag">Verilog / SysytemVerilog</span>
+            <span class="pillTag">C / Embedded C</span>
+            <span class="pillTag">C++</span>
+            <span class="pillTag">Python</span>
+            <span class="pillTag">CAN / SPI / I2C / UART</span>
+          </div>
+          <p class="small muted">Real-time logic, deterministic pipelines, robust firmware.</p>
+        </div>
+
+        <div class="card skill">
+          <h3>Simulation & Tools</h3>
+          <div class="pillWrap">
+            <span class="pillTag">Altium</span>
+            <span class="pillTag">KiCad</span>
+            <span class="pillTag">LTspice</span>
+            <span class="pillTag">HFSS</span>
+            <span class="pillTag">MATLAB</span>
+            <span class="pillTag">Simulink</span>
+            <span class="pillTag">Quartus</span>
+            <span class="pillTag">ModelSim</span>
+            <span class="pillTag">Git</span>
+            <span class="pillTag">Linux</span>
+            <span class="pillTag">SolidWorks</span>
+            <span class="pillTag">Fusion360</span>
+          </div>
+          <p class="small muted">From circuit sims to EM tools to verification.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section__head">
+        <h2>About</h2>
+        <p>What I care about & how I like to build.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card note">
+          <h3>My engineering vibe</h3>
+          <p>
+           I focus on hardware where performance can be directly measured and validated, 
+           including electrical characteristics, timing behaviour, noise performance, 
+           and thermal margins. My interests are centred on power and energy systems, 
+           electronic sensing, and RF-adjacent front-end hardware.
+          </p>
+          <p class="small muted monoSmall">
+            Current focus: Electronics hardware, EV systems, RF engineering
+          </p>
+        </div>
+
+        <div class="card note">
+          <h3>Education</h3>
+          <b>University of Sydney</b> - B.Eng (Mechatronics) (Hons) / B.Sc (Computer Science), WAM 81
+          <ul class="bullets">
+              <li>Engineering Sydney Industry Placement Scholarship (ESIPS) - 2026 S2 cohort</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section__head">
+        <h2>Contact</h2>
+        <p>Want me on your hardware team? Let’s talk.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card note">
+          <h3>Links</h3>
+          <div class="contactList">
+            <a class="contactLink" href="mailto:frbatavia@gmail.com">
+              <span class="icon">✉️</span><span>frbatavia@gmail.com</span>
+            </a>
+            <a class="contactLink" href="https://www.linkedin.com/in/falgun-batavia" target="_blank" rel="noopener">
+              <span class="icon">🔗</span><span>linkedin.com/in/falgun-batavia</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card note">
+          <h3>Quick pitch</h3>
+          <p>
+            Electronics & hardware engineer with experience across EV systems,
+           Circuit and PCB design, embedded/FPGA, RF engineering and research-led development.
+          </p>
+          <p class="small muted">Best for: electronics / embedded / power / hardware R&D roles.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="monoSmall">© <span id="year"></span> Falgun Batavia</span>
+        <span class="monoSmall muted">Built with HTML/CSS/JS • Neon electronics theme</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
