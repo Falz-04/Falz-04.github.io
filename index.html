@@ -108,8 +108,6 @@
         <div class="card__head">
           <div class="card__title">Custom High-Voltage Battery Management System (BMS)</div>
           <div class="card__meta">
-            <span class="pillTag">Accumulator</span>
-            <span class="pillTag pillTag--alt">Safety-Critical</span>
           </div>
         </div>
         <p class="card__body">
@@ -123,7 +121,7 @@
           <li>Delivered schematics, PCB layout, and build documentation for manufacturability, scalability, and FSAE compliance</li>
         </ul>
         <div class="card__foot">
-          <span class="monoSmall">Tools: Altium • TI BQ79614-Q1 • CAN • UART DMA • STM32</span>
+          <span class="monoSmall">Tools: Altium • STM32</span>
           <a class="link" href="#p-bms">Read more →</a>
         </div>
       </article>
@@ -147,7 +145,7 @@
             <li>Managed system‑level design reviews for a 15‑member electrical team</li>
           </ul>
           <div class="card__foot">
-            <span class="monoSmall">Tools: Altium • LTspice • CAN • STM32</span>
+            <span class="monoSmall">Tools: Altium Designer • LTspice • CAN • Fusion360 </span>
             <a class="link" href="#p-hv">Read more →</a>
           </div>
         </article>
@@ -160,8 +158,8 @@
             </div>
           </div>
           <p class="card__body">
-            Built Python Transfer Matrix Method (TMM) simulation models for multilayer solar cell stacks (300–1200nm) to
-            quantify parasitic loss, absorption and reflection, guiding design improvements.
+            Built Python simulation models using transfer matrix method (TMM) for multilayer solar cell stacks to
+            quantify parasitic loss, absorption and reflection, guiding design improvements. GUI was also implemented, click <a href="optical-tmm.streamlit.app">here</a> to see.
           </p>
           <ul class="bullets">
             <li>Layer‑resolved absorptance + parasitic optical loss analysis</li>
@@ -169,7 +167,7 @@
             <li>Designed PCB architectures for space‑grade arrays</li>
           </ul>
           <div class="card__foot">
-            <span class="monoSmall">Tools: Python • Fusion360</span>
+            <span class="monoSmall">Tools: Python </span>
             <a class="link" href="#p-tmm">Read more →</a>
           </div>
         </article>
@@ -219,7 +217,7 @@
       <li>Bench tested + verified integration on vehicle</li>
     </ul>
     <div class="card__foot">
-      <span class="monoSmall">Tools: Altium / KiCad • LTspice • Bench testing</span>
+      <span class="monoSmall">Tools: Altium Designer • Fusion360 • LTspice</span>
       <a class="link" href="#p-tsal">Read more →</a>
     </div>
   </article>
@@ -241,7 +239,7 @@
       <li>Integrated into the broader HV + LV control system</li>
     </ul>
     <div class="card__foot">
-      <span class="monoSmall">Tools: LTspice • PCB CAD • Oscilloscope</span>
+      <span class="monoSmall">Tools: LTspice • Altium Designer</span>
       <a class="link" href="#p-precharge">Read more →</a>
     </div>
   </article>
@@ -249,7 +247,7 @@
   <article class="card project" data-tilt>
     <div class="card__fx"></div>
     <div class="card__head">
-      <div class="card__title">Battery Thermistor Acquisition Node</div>
+      <div class="card__title">Battery Thermistor Acquisition Board</div>
       <div class="card__meta">
       </div>
     </div>
@@ -263,7 +261,7 @@
       <li>Designed for bring-up and debugging in real environments</li>
     </ul>
     <div class="card__foot">
-      <span class="monoSmall">Tools: STM32 • C • CAN • Logic analyser</span>
+      <span class="monoSmall">Tools: STM32 • C • CAN </span>
       <a class="link" href="#p-tem">Read more →</a>
     </div>
   </article>
@@ -271,7 +269,7 @@
   <article class="card project" data-tilt>
     <div class="card__fx"></div>
     <div class="card__head">
-      <div class="card__title">Pulse Oximeter Analog Front-End</div>
+      <div class="card__title">Analog Pulse Oximeter</div>
       <div class="card__meta">
       </div>
     </div>
@@ -285,34 +283,20 @@
       <li>LTspice-informed design decisions</li>
     </ul>
     <div class="card__foot">
-      <span class="monoSmall">Tools: LTspice • PCB CAD • Oscilloscope</span>
+      <span class="monoSmall">Tools: LTspice • KiCad </span>
       <a class="link" href="#p-pulseox">Read more →</a>
     </div>
   </article>
 
-  <article class="card project" data-tilt>
-    <div class="card__fx"></div>
-    <div class="card__head">
-      <div class="card__title">Flexible Solar Array PCB Work</div>
-      <div class="card__meta">
-      </div>
-    </div>
-    <p class="card__body">
-      PCB architecture and validation work supporting flexible perovskite solar array development
-      in a research-led engineering environment.
-    </p>
-    <ul class="bullets">
-      <li>Designed and tested PCB architectures for array integration</li>
-      <li>Supported design reviews and documentation (PDR/CDR)</li>
-      <li>Bench validation and iteration with stakeholders</li>
-    </ul>
-    <div class="card__foot">
-      <span class="monoSmall">Tools: PCB CAD • Lab testing • Documentation</span>
-      <a class="link" href="#p-solarpcb">Read more →</a>
-    </div>
-  </article>
+  
 </div>
 
+<div class="section__head" style="margin-top:30px;">
+  <div>
+    <h2>Deep Dive</h2>
+    <p>Detailed technical notes for each featured build.</p>
+  </div>
+</div>
       <!-- Deep-dive anchors -->
        <div class="deepDive" id="p-bms">
         <div class="deepDive__head">
@@ -474,7 +458,7 @@
       
       <div class="deepDive" id="p-pulseox">
         <div class="deepDive__head">
-          <h3>Pulse Oximeter AFE - Overview</h3>
+          <h3>Analog Pulse Oximeter - Overview</h3>
           <p>Analog optical sensing front-end with amplification and filtering.</p>
         </div>
         <div class="grid grid--2">
@@ -491,30 +475,6 @@
             <ul class="bullets">
               <li>Scope measurements demonstrating stable pulse waveforms</li>
               <li>Iterated component values based on measured behaviour</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="deepDive" id="p-solarpcb">
-        <div class="deepDive__head">
-          <h3>Solar Array PCB Work - Overview</h3>
-          <p>Hardware design and validation supporting flexible solar array integration.</p>
-        </div>
-        <div class="grid grid--2">
-          <div class="card note">
-            <h4>Work performed</h4>
-            <ul class="bullets">
-              <li>PCB architecture design for integration constraints</li>
-              <li>Testing and iteration in a research-led team</li>
-              <li>Documentation for engineering reviews</li>
-            </ul>
-          </div>
-          <div class="card note">
-            <h4>Why it matters</h4>
-            <ul class="bullets">
-              <li>Shows practical PCB design + validation workflow</li>
-              <li>Demonstrates engineering maturity in review-driven environments</li>
             </ul>
           </div>
         </div>
@@ -539,7 +499,7 @@
             </div>
             <ul class="bullets">
               <li>Designed and tested PCB architectures for flexible space‑grade perovskite solar arrays</li>
-              <li>Developed Python optical TMM models for multilayer/multi‑junction structures (300–1200nm)</li>
+              <li>Developed Python thin film optics simulations and models for multilayer/multi‑junction structures, including a <a href="optical-tmm.streamlit.app">GUI</a></li>
               <li>Contributed to PDR/CDR for 2027 space solar array launch</li>
             </ul>
           </div>
