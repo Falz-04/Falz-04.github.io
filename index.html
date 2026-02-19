@@ -103,14 +103,37 @@
         <p>Real hardware, measurable results, clean engineering notes.</p>
       </div>
 
+      <article class="card project" data-tilt>
+        <div class="card__fx"></div>
+        <div class="card__head">
+          <div class="card__title">Custom High-Voltage Battery Management System (BMS)</div>
+          <div class="card__meta">
+            <span class="pillTag">Accumulator</span>
+            <span class="pillTag pillTag--alt">Safety-Critical</span>
+          </div>
+        </div>
+        <p class="card__body">
+          Independently designed a scalable Formula SAE accumulator BMS with modular,
+          daisy-chained cell monitoring and isolated communications.
+        </p>
+        <ul class="bullets">
+          <li>Integrated TI BQ79614-Q1 monitors in isolated topology (28 cells/segment, 14 cells per IC)</li>
+          <li>Implemented dual isolated CAN buses (vehicle + charger) and 1 Mbps DMA-based UART host link</li>
+          <li>Developed temperature multiplexing (14 sensors/segment), Hall-effect current sensing, and fail-safe contactor/precharge logic</li>
+          <li>Delivered schematics, PCB layout, and build documentation for manufacturability, scalability, and FSAE compliance</li>
+        </ul>
+        <div class="card__foot">
+          <span class="monoSmall">Tools: Altium • TI BQ79614-Q1 • CAN • UART DMA • STM32</span>
+          <a class="link" href="#p-bms">Read more →</a>
+        </div>
+      </article>
+
       <div class="grid grid--3">
         <article class="card project" data-tilt>
           <div class="card__fx"></div>
           <div class="card__head">
             <div class="card__title">470V Formula Student EV - HV System</div>
             <div class="card__meta">
-              <span class="pillTag">Leadership</span>
-              <span class="pillTag pillTag--alt">Student Engineering</span>
             </div>
           </div>
           <p class="card__body">
@@ -132,10 +155,8 @@
         <article class="card project" data-tilt>
           <div class="card__fx"></div>
           <div class="card__head">
-            <div class="card__title">Multi‑Junction Solar Cells - Optical TMM</div>
+            <div class="card__title">Thin Film Optics Simulation and Modelling</div>
             <div class="card__meta">
-              <span class="pillTag">Internship</span>
-              <span class="pillTag pillTag--alt"></span>
             </div>
           </div>
           <p class="card__body">
@@ -158,8 +179,6 @@
           <div class="card__head">
             <div class="card__title">Beat‑Sync VFX - Real Time FPGA DSP</div>
             <div class="card__meta">
-              <span class="pillTag">FPGA</span>
-              <span class="pillTag pillTag--alt">Real‑time</span>
             </div>
           </div>
           <p class="card__body">
@@ -188,8 +207,6 @@
     <div class="card__head">
       <div class="card__title">TSAL + Discharge Board</div>
       <div class="card__meta">
-        <span class="pillTag">PCB</span>
-        <span class="pillTag pillTag--alt">Power / Safety</span>
       </div>
     </div>
     <p class="card__body">
@@ -212,8 +229,6 @@
     <div class="card__head">
       <div class="card__title">Precharge Control Board</div>
       <div class="card__meta">
-        <span class="pillTag">Power</span>
-        <span class="pillTag pillTag--alt">Controls</span>
       </div>
     </div>
     <p class="card__body">
@@ -236,8 +251,6 @@
     <div class="card__head">
       <div class="card__title">Battery Thermistor Acquisition Node</div>
       <div class="card__meta">
-        <span class="pillTag">Embedded</span>
-        <span class="pillTag pillTag--alt">CAN</span>
       </div>
     </div>
     <p class="card__body">
@@ -260,8 +273,6 @@
     <div class="card__head">
       <div class="card__title">Pulse Oximeter Analog Front-End</div>
       <div class="card__meta">
-        <span class="pillTag">Analog</span>
-        <span class="pillTag pillTag--alt">Sensing</span>
       </div>
     </div>
     <p class="card__body">
@@ -284,8 +295,6 @@
     <div class="card__head">
       <div class="card__title">Flexible Solar Array PCB Work</div>
       <div class="card__meta">
-        <span class="pillTag">Internship</span>
-        <span class="pillTag pillTag--alt">Hardware</span>
       </div>
     </div>
     <p class="card__body">
@@ -305,6 +314,32 @@
 </div>
 
       <!-- Deep-dive anchors -->
+       <div class="deepDive" id="p-bms">
+        <div class="deepDive__head">
+          <h3>Custom High-Voltage BMS - Technical Overview</h3>
+          <p>Scalable, safety-focused battery monitoring and control for a Formula SAE accumulator.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card note">
+            <h4>Architecture</h4>
+            <ul class="bullets">
+              <li>Modular daisy-chained monitoring architecture for segment-level expansion</li>
+              <li>TI BQ79614-Q1 IC integration in isolated topology (28 cells/segment)</li>
+              <li>Dual isolated CAN buses for vehicle and charger interfaces</li>
+              <li>1 Mbps DMA-based UART channel for host diagnostics and control</li>
+            </ul>
+          </div>
+          <div class="card note">
+            <h4>Safety + implementation outcomes</h4>
+            <ul class="bullets">
+              <li>Multiplexed temperature acquisition for 14 sensors per segment</li>
+              <li>Hall-effect current sensing integrated with protection pathways</li>
+              <li>Complete schematics, PCB layout, and build documentation for manufacturing readiness and FSAE compliance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="deepDive" id="p-hv">
         <div class="deepDive__head">
           <h3>High-Voltage System - Technical Overview</h3>
@@ -338,7 +373,7 @@
 
       <div class="deepDive" id="p-tmm">
         <div class="deepDive__head">
-          <h3>Optical TMM - What it measures</h3>
+          <h3>Thin Film Optics Simulation and Modelling - What it measures</h3>
           <p>Reflection, transmission, absorption and parasitic losses per layer of a solar cell across a spectrum.</p>
         </div>
         <div class="grid grid--2">
